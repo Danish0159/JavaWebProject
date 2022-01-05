@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+	
+	<servlet>
+		<servlet-name>SignUp</servlet-name>
+		<servlet-class>SignUp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>Login</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Checkout</servlet-name>
+		<servlet-class>Checkout</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Cart</servlet-name>
+		<servlet-class>Cart</servlet-class>
+	</servlet>
+
+
+	<servlet>
+		<servlet-name>Products</servlet-name>
+		<servlet-class>Products</servlet-class>
+	</servlet>
+
+
+	<servlet>
+		<servlet-name>Calculate</servlet-name>
+		<servlet-class>Calculate</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SignUp</servlet-name>
+		<url-pattern>/SignUp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/Login</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>Products</servlet-name>
+		<url-pattern>/Products</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Checkout</servlet-name>
+		<url-pattern>/Checkout</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>Calculate</servlet-name>
+		<url-pattern>/Calculate</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Cart</servlet-name>
+		<url-pattern>/Cart</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>

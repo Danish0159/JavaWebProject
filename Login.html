@@ -1,10 +1,24 @@
-<html>
-<body>
-<form method="post" action="Login">
-<h1> Login</h1>
-Enter Name: <input type="text" name="name"><br>
-<input type="submit" value="Search">
+<!DOCTYPE html>
+<html lang="en">
 
-</form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container">
+        <form id="form" class="form" method="post" action="Login">
+            <h2>Login</h2>
+            <div class="form-control">
+                <label for="username">Enter Name</label>
+                <input type="text" name="name" id="username" placeholder="Enter Your Name">
+                <input class="submit-btn" type="submit" value="Login">
+            </div>
+        </form>
+    </div>
 </body>
+
 </html>

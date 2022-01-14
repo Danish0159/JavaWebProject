@@ -5,11 +5,9 @@ import java.sql.*;
 import java.util.*;
 import javax.swing.*;
 
-
 public class Products extends HttpServlet {
 public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{        
-
 String item = null;
 int i =1;
 Enumeration e = null;

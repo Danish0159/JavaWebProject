@@ -14,15 +14,8 @@ PrintWriter out = response.getWriter();
 	HttpSession session = request.getSession(true);
         String total = (String)session.getAttribute("ORDERTOTAL");
 	out.println("Order Total: " + total);
-	session.invalidate();
-
-
-	
-
-
-
-    out.close();
-   
+	//session.invalidate();
+	out.close();
 } 
 }
 

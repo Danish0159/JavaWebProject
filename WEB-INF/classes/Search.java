@@ -5,42 +5,11 @@ import java.sql.*;
 import java.util.*;
 import javax.swing.*;
 
-
-public class Calculate extends HttpServlet {
+public class Search extends HttpServlet {
 public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-	{  
-int p1=0;
-int p2=0;
-int p3=0;
-int totalPrice=0;      
-
-response.setContentType("text/html");
+	{   
+    PrintWriter out = response.getWriter();
 HttpSession session = request.getSession(true);
-PrintWriter out = response.getWriter();
-String counter = (String)session.getAttribute("counter");
-int count = Integer.parseInt(counter);
-
-for (int i = 1; i<count;i++)
-{
-String sitems []= new String [count];
-sitems[i-1] = (String)session.getAttribute("c" + i);
-if((sitems[i-1]).equals("Football"))
-{
- p1=50;
-}
-if((sitems[i-1]).equals("Studs"))
-{
- p2=60;
-}
-if((sitems[i-1]).equals("Gloves"))
-{
- p3=80;
-}
-}
-
-totalPrice= p1+p2+p3;
-session.setAttribute("ORDERTOTAL" , totalPrice + "");
-      
 out.println("<!DOCTYPE html>");
 out.println("<html>");
 out.println("<head>");
@@ -71,52 +40,81 @@ out.println("            padding: 0;");
 out.println("            margin: 0;");
 out.println("            background-image: linear-gradient(to right, rgb(155, 51, 102), rgb(86, 38, 93));");
 out.println("        }");
-out.println("        .btn {");
-out.println("            width: 120px;");
-out.println("            padding: 1rem 0rem;");
-out.println("            background-color: rgb(155, 51, 102);");
-out.println("            color: white;");
-out.println("            border: none;");
-out.println("            cursor: pointer;");
-out.println("            text-align: center;");
-out.println("        }");
+
 out.println("        .container {");
 out.println("            max-width: 30rem;");
 out.println("            margin: auto;");
-out.println("            padding: 10rem;");
 out.println("            display: flex;");
 out.println("            align-items: center;");
-out.println("            justify-content: space-between;");
+out.println("            justify-content: center;");
+out.println("            height: 95vh;");
 out.println("        }");
+
 out.println("        input {");
 out.println("            font-family: inherit;");
 out.println("            font-size: 1rem;");
 out.println("        }");
+
+out.println(" .search__label {");
+out.println(" display: block;");
+out.println(" color: white;");
+out.println(" font-size: 1.2rem;");
+out.println(" margin-bottom: 1rem;");
+out.println(" }");
+
+out.println(" .search__input {");
+out.println(" padding: .3rem .3rem;");
+out.println(" border-radius: .2rem;");
+out.println(" border: none;");
+out.println(" }");
+
+out.println("     .btn {");
+out.println("         display: block;");
+out.println("         padding: .5rem .5rem;");
+out.println("         margin-top: 1rem;");
+out.println("         background-color: rgb(155, 51, 102);");
+out.println("         color: white;");
+out.println("         border: none;");
+out.println("         border-radius: 4px;");
+out.println("         cursor: pointer;");
+out.println("         font-size: .9rem;");
+out.println("         text-align: center;");
+out.println("     }");
 
 
 out.println("</style>");  
 
 
 out.println("</head>");
+
+
 out.println("<body>");
 
 
 out.println("    <div class=container>");
-out.println("        <form method=post action=Cart>");
-out.println("            <input class=btn type=submit value=Cart>");
+out.println("        <form method=post action=Find>");
+
+
+out.println("  <label class=search__label>");
+out.println("                 Search Product");
+out.println("             </label>");
+out.println("             <input name=product class=search__input type=text>");
+out.println("               <input class=btn type=submit value=Search>");
+        
 out.println("        </form>");
-out.println("        <form method=post action=Checkout>");
-out.println("            <input class=btn type=submit value=Checkout>");
-out.println("        </form>");
-out.println("        <a class=btn href=http://localhost:8080/WebProject/Login.html>Logout</a>");
 out.println("    </div>");
 
 out.println("</body>");
 out.println("</html>");
 
 
-out.close();
-   
-} 
+
+
+
+
+
+
+
+}
 }
 

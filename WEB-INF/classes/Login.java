@@ -151,6 +151,13 @@ out.println("         background-color: rgb(155, 51, 102);");
 out.println("         font: inherit;");
 out.println("         cursor: pointer;");
 out.println("     }");
+
+
+out.println("     #search-form { ");
+out.println("             display: flex;");
+out.println("             justify-content: flex-end;");
+out.println("         }");
+
 out.println("</style>");  
 out.println("</head>");
 
@@ -158,6 +165,11 @@ out.println("</head>");
 out.println("<body>");
 out.println("       <div class=container>");
 out.println("           <h1 class=title>Ecommerce Site</h1>");
+out.println("  <form id=search-form action=Search method=post>");
+out.println("   <div>");
+out.println("       <input class=submit type=submit value=Custom Search>");
+out.println("   </div>");
+out.println("  </form>");
 out.println("           <form method=post action=Products>");
 out.println("               <section class=products>");
 out.println("                   <div class=products__grid>");

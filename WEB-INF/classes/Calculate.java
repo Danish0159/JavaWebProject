@@ -12,6 +12,9 @@ public void doPost(HttpServletRequest request, HttpServletResponse response) thr
 int p1=0;
 int p2=0;
 int p3=0;
+int p4=0;
+int p5=0;
+int p6=0;
 int totalPrice=0;      
 
 response.setContentType("text/html");
@@ -36,9 +39,21 @@ if((sitems[i-1]).equals("Gloves"))
 {
  p3=80;
 }
+if((sitems[i-1]).equals("Bat"))
+{
+ p4=90;
+}
+if((sitems[i-1]).equals("Bowl"))
+{
+ p5=100;
+}
+if((sitems[i-1]).equals("Pads"))
+{
+ p6=110;
+}
 }
 
-totalPrice= p1+p2+p3;
+totalPrice= p1+p2+p3+p4+p5+p6;;
 session.setAttribute("ORDERTOTAL" , totalPrice + "");
       
 out.println("<!DOCTYPE html>");

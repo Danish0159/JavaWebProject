@@ -32,12 +32,20 @@ if((sitems[i-1]).equals("Gloves"))
 {
 out.println("Gloves<br>"); 
 }
-
+if((sitems[i-1]).equals("Bat"))
+{
+out.println("Bat<br>"); 
 }
-
-
+if((sitems[i-1]).equals("Bowl"))
+{
+out.println("Bowl<br>"); 
+}
+if((sitems[i-1]).equals("Pads"))
+{
+out.println("Pads<br>"); 
+}
+}
 out.close();
-   
 } 
 }
 

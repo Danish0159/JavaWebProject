@@ -10,7 +10,7 @@ public class Cart extends HttpServlet {
 public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{        
 response.setContentType("text/html");
-HttpSession session = request.getSession(true);
+HttpSession session = request.getSession(false);
 PrintWriter out = response.getWriter();
 
 String counter = (String)session.getAttribute("counter");

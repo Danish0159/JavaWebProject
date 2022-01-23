@@ -5,10 +5,10 @@ import java.sql.*;
 import java.util.*;
 import javax.swing.*;
 
-
 public class Calculate extends HttpServlet {
 public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-	{  
+{  
+// code for calculation.
 int p1=0;
 int p2=0;
 int p3=0;
@@ -18,40 +18,63 @@ int p6=0;
 int totalPrice=0;      
 
 response.setContentType("text/html");
-HttpSession session = request.getSession(true);
+HttpSession session = request.getSession(false);
 PrintWriter out = response.getWriter();
 String counter = (String)session.getAttribute("counter");
 int count = Integer.parseInt(counter);
+String name = (String)session.getAttribute("userName");
 
+try{
+// code for establishing connection to database for insertion.
+    Class.forName("com.mysql.jdbc.Driver");
+    String url = "jdbc:mysql://127.0.0.1/danish";
+    Connection con=DriverManager.getConnection(url, "root", "root");
+    Statement st=con.createStatement();
+    
+	
 for (int i = 1; i<count;i++)
 {
 String sitems []= new String [count];
 sitems[i-1] = (String)session.getAttribute("c" + i);
 if((sitems[i-1]).equals("Football"))
 {
- p1=50;
+  p1=50;
+ String query = "INSERT INTO soldproducts(userName,product)VALUES('"+ name + "','" + sitems[i-1] + "')";
+ int rs = st.executeUpdate(query);
 }
+
 if((sitems[i-1]).equals("Studs"))
 {
  p2=60;
+ String query = "INSERT INTO soldproducts(userName,product)VALUES('"+ name + "','" + sitems[i-1] + "')";
+ int rs = st.executeUpdate(query);
 }
 if((sitems[i-1]).equals("Gloves"))
 {
  p3=80;
+ String query = "INSERT INTO soldproducts(userName,product)VALUES('"+ name + "','" + sitems[i-1] + "')";
+ int rs = st.executeUpdate(query);
 }
 if((sitems[i-1]).equals("Bat"))
 {
  p4=90;
+ String query = "INSERT INTO soldproducts(userName,product)VALUES('"+ name + "','" + sitems[i-1] + "')";
+ int rs = st.executeUpdate(query);
 }
 if((sitems[i-1]).equals("Bowl"))
 {
  p5=100;
+ String query = "INSERT INTO soldproducts(userName,product)VALUES('"+ name + "','" + sitems[i-1] + "')";
+ int rs = st.executeUpdate(query);
 }
 if((sitems[i-1]).equals("Pads"))
 {
  p6=110;
+ String query = "INSERT INTO soldproducts(userName,product)VALUES('"+ name + "','" + sitems[i-1] + "')";
+ int rs = st.executeUpdate(query);
 }
 }
+
 
 totalPrice= p1+p2+p3+p4+p5+p6;;
 session.setAttribute("ORDERTOTAL" , totalPrice + "");
@@ -131,6 +154,10 @@ out.println("</html>");
 
 
 out.close();
+}
+ catch(Exception e){
+      out.println(e);
+   }
    
 } 
 }

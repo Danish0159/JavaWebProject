@@ -10,8 +10,7 @@ public void doPost(HttpServletRequest request, HttpServletResponse response) thr
 	{        
     response.setContentType("text/html");
 PrintWriter out = response.getWriter();
-
-	HttpSession session = request.getSession(true);
+	HttpSession session = request.getSession(false);
         String total = (String)session.getAttribute("ORDERTOTAL");
 	out.println("Order Total: " + total);
 	//session.invalidate();

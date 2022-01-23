@@ -12,7 +12,7 @@ String item = null;
 int i =1;
 Enumeration e = null;
 PrintWriter out = response.getWriter();
-HttpSession session = request.getSession(true);
+HttpSession session = request.getSession(false);
 
 e=request.getParameterNames();
 while(e.hasMoreElements())

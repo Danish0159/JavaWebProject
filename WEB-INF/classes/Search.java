@@ -9,7 +9,7 @@ public class Search extends HttpServlet {
 public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{   
     PrintWriter out = response.getWriter();
-HttpSession session = request.getSession(true);
+HttpSession session = request.getSession(false);
 out.println("<!DOCTYPE html>");
 out.println("<html>");
 out.println("<head>");

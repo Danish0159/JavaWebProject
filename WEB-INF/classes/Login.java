@@ -5,11 +5,9 @@ import java.sql.*;
 import java.util.*;
 import javax.swing.*;
 
-
 public class Login extends HttpServlet {
 public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{        
-	
     response.setContentType("text/html");
     PrintWriter out = response.getWriter();
     HttpSession session = request.getSession(true);
@@ -232,8 +230,6 @@ out.println("           </form>");
 out.println("       </div>");
 out.println("</body>");
 out.println("</html>");
-
-
 
   } else {
             out.println("No record found");

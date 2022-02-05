@@ -7,6 +7,11 @@
 	</servlet>
 
 	<servlet>
+		<servlet-name>Logout</servlet-name>
+		<servlet-class>Logout</servlet-class>
+	</servlet>
+
+	<servlet>
 		<servlet-name>Find</servlet-name>
 		<servlet-class>Find</servlet-class>
 	</servlet>
@@ -82,6 +87,11 @@
 	<servlet-mapping>
 		<servlet-name>Find</servlet-name>
 		<url-pattern>/Find</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Logout</servlet-name>
+		<url-pattern>/Logout</url-pattern>
 	</servlet-mapping>
 
 </web-app>
